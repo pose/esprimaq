@@ -1,4 +1,4 @@
-## esprimaq
+## esprimaq (BETA)
 
 Query esprima ASTs by using a chainable query syntax.
 
