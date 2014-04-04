@@ -1,6 +1,6 @@
 ## esprimaq
 
-Query esprima ASTs by using a cascading query syntax.
+Query esprima ASTs by using a chainable query syntax.
 
 ### Install
 
