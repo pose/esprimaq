@@ -1,7 +1,7 @@
 {
   "name": "esprimaq",
   "version": "0.0.1",
-  "Description": "Simple, lightweight and CSS-free esprima AST query library",
+  "Description": "Simple, lightweight and CSS-selector-free esprima AST query library",
   "devDependencies": {
     "esprima": "^1.1.1"
   }
