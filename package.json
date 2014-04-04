@@ -4,5 +4,9 @@
   "Description": "Simple, lightweight and CSS-selector-free esprima AST query library",
   "devDependencies": {
     "esprima": "^1.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pose/esprimaq.git"
   }
 }
