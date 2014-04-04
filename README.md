@@ -38,7 +38,7 @@ assert.equal('w00t', result[0].arguments[0].name);
 ### FAQ
 
 #### Why another esprima query/selector library?
-I wanted some simpler and CSS-selector-free way of querying esprima ASTs
+I wanted a simpler and CSS-selector-free alternative to query esprima ASTs.
 
 #### Do you know any cool CSS-based alternatives?
 Yes, check these projects:
