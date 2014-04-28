@@ -32,7 +32,15 @@ assert.equal('w00t', result[0].arguments[0].name);
 ```
 
 ### TODO
-  * Implement tons of selectors
+  * Implement tons of selectors:
+    * Identifier
+    * CallExpression
+    * ExpressionStatement
+    * AssignmentExpression
+    * Literal
+    * Property
+    * Identifier
+    * among others
   * Implement way of doing `AND` in queries
 
 ### FAQ
