@@ -10,25 +10,36 @@ Query esprima ASTs by using a chainable query syntax.
 
 ### Usage
 
+```js
+var find = require('esprimaq');
+```
+
 Find function calls of the `mongo` function:
 ```js
-syntax = esprima.parse("mongo('hello');", { tolerant: true, loc: true });
-result = find(syntax).callFn('mongo').exec();
+var syntax = esprima.parse("mongo('hello');", {tolerant: true});
+var result = find(syntax).callFn('mongo').exec();
 assert.equal('hello', result[0].arguments[0].value);
 ```
 
 Find variable declarations of `x`:
 ```js
-syntax = esprima.parse("var x = 5;", { tolerant: true, loc: true });
-result = find(syntax).varDecl('x').exec();
+var syntax = esprima.parse("var x = 5;", {tolerant: true});
+var result = find(syntax).varDecl('x').exec();
 assert.equal('5', result[0].init.value);
 ```
 
 Find calls to `hello.bye`:
 ```js
-syntax = esprima.parse("hello.bye(w00t);", { tolerant: true, loc: true });
-result = find(syntax).callMethod('hello', 'bye').exec();
+var syntax = esprima.parse("hello.bye(w00t);", {tolerant: true});
+var result = find(syntax).callMethod('hello', 'bye').exec();
 assert.equal('w00t', result[0].arguments[0].name);
+```
+
+Find calls using `this`:
+```js
+var syntax = esprima.parse('this.foo(bar);', {tolerant: true});
+var result = find(syntax).callThisMethod('foo').exec();
+assert.equal('bar', result[0].arguments[0].name);
 ```
 
 ### TODO
@@ -56,7 +67,7 @@ Yes, check these projects:
 ### License
 (The MIT License)
 
-Copyright (c) 2014 Alberto Pose < albertopose at gmail.com >
+Copyright (c) 2014-2016 Alberto Pose < albertopose at gmail.com >
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

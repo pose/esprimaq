@@ -32,6 +32,24 @@ module.exports = function (syntax) {
       return this;
     },
 
+    /* Find identifiers */
+    identifiers: function () {
+      this.criteria.push(function (node) {
+        return node.type === 'Identifier';
+      });
+
+      return this;
+    },
+
+    /* Finde function expressions */
+    fnExpressions: function () {
+      this.criteria.push(function (node) {
+        return node.type === 'FunctionExpression';
+      });
+
+      return this;
+    },
+
     /* Find assingments: lvalue = {data}; */
     varDecl: function (lvalue) {
       this.criteria.push(function (node) {
@@ -46,6 +64,16 @@ module.exports = function (syntax) {
       this.criteria.push(function (node) {
         return node.type === 'CallExpression' && node.callee.type === 'MemberExpression' &&
           node.callee.object.name === obj && node.callee.property.name === methodName;
+      });
+
+      return this;
+    },
+
+    /* Find calls to a method with this keyword: methodName  -> this.methodName() */
+    callThisMethod: function (methodName) {
+      this.criteria.push(function (node) {
+        return node.type === 'CallExpression' && node.callee.type === 'MemberExpression' &&
+          node.callee.object.type === 'ThisExpression' && node.callee.property.name === methodName;
       });
 
       return this;
