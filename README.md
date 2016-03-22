@@ -54,6 +54,7 @@ assert.equal('bar', result[0].arguments[0].name);
     * among others
   * Implement way of doing `AND` in queries
 
+
 ### FAQ
 
 #### Why another esprima query/selector library?
@@ -63,6 +64,19 @@ I wanted a simpler and CSS-selector-free alternative to query esprima ASTs.
 Yes, check these projects:
   * [esquery](https://github.com/jrfeenst/esquery)
   * [esprima-selector](https://github.com/alltom/esprima-selector)
+
+
+### Changelog
+
+#### 0.1.0
+
+##### Added
+
+ * Adding support for `callThisMethod`, `fnExpressions` and `identifiers` filters.
+
+#### 0.0.1
+
+* Initial Release
 
 ### License
 (The MIT License)
